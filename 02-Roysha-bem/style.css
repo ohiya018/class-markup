@@ -1,1 +1,32 @@
 @charset "utf-8";
+/* CSSの書き方：基本スタイルと差分スタイルの分離 */
+
+/* 1. ベースとなる基本クラス（形状・サイズ・基本色） */
+.btn {
+    display: block;
+    width: 200px;
+    padding: 20px 0;
+    background-color: #256BE6;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 27.5px;
+}
+
+/* 2. Modifierクラス（上書きしたいプロパティだけを記述する） */
+.btn--info {
+    background-color: #2DBE61;
+    /* 背景色だけを上書き */
+}
+
+.btn--warning {
+    background-color: #F87624;
+    /* 背景色だけを上書き */
+}
+
+.btn--outline {
+    border: 1px solid #256BE6;
+    /* 枠線をつけ、背景を透明に */
+    background-color: transparent;
+    color: #256BE6;
+}
