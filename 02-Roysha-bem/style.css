@@ -119,6 +119,11 @@ img {
     color: #fff;
 }
 
+.btn--question {
+    background-color: #F87624;
+    color: #fff;
+}
+
 .btn--center {
     margin: 0 auto;
 }
@@ -225,4 +230,88 @@ img {
 .offer__info .btn {
     margin-left: auto;
     margin-right: auto;
+}
+
+
+/* help.html */
+.transfer {
+    padding: 80px 0;
+}
+
+.transfer__inner {
+    max-width: 1200px;
+    width: 88%;
+    margin: 0 auto;
+}
+
+.transfer__info {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.transfer__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 60px;
+}
+
+.transfer__item {
+    text-align: center;
+}
+
+
+.question {
+    padding: 80px 0;
+    background-color: #123D88;
+}
+
+.question__inner {
+    max-width: 1200px;
+    width: 88%;
+    margin: 0 auto;
+}
+
+.question__info {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #fff;
+    text-align: center;
+}
+
+.question__info .intro__title {
+    color: #fff;
+}
+
+.question__info .btn {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.asked {
+    padding: 80px 0;
+}
+
+.asked__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 96px;
+    max-width: 1200px;
+    width: 88%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+.asked__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px 44px;
+    grid-row: 1 / 2;
+}
+
+.asked__item {
+    padding: 40px;
+    border: 1px solid #6C6C6F;
+    text-align: center;
 }
