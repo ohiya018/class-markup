@@ -126,7 +126,7 @@ img {
     align-items: center;
 }
 
-.features__link {
+.features__list {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 70px 44px;
