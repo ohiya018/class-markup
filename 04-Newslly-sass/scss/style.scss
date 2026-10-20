@@ -1,0 +1,75 @@
+@use 'sass:math';
+
+$color-text: #888;
+$color-main: #202124;
+$color-accent: #fa6980;
+$font-family-base: Helvetica,
+    Arial,
+    sans-serif;
+
+@mixin inner() {
+    max-width: 800px;
+    width: 88%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    color: $color-text;
+    font-family: $font-family-base;
+    line-height: math.div(24, 14);
+    letter-spacing: #{math.div(50, 1000)}em;
+
+    img {
+        max-width: 100%;
+        height: auto;
+        vertical-align: bottom;
+    }
+}
+
+.title {
+    color: $color-main;
+}
+
+.btn {
+    background-color: $color-accent;
+    color: #fff;
+    transition: .3s;
+
+    &:hover {
+        background-color: $color-main;
+    }
+}
+
+.header {
+    padding: 30px 0 60px;
+    text-align: center;
+
+    &__inner {
+        @include inner();
+    }
+}
+
+.footer {
+    padding: 100px 0 40px;
+    background-color: $color-main;
+
+    &__inner {
+        @include inner();
+    }
+
+    small {
+        font-size: 12px;
+        color: #fff;
+    }
+}
+
+.box {
+    width: 100px + 50px;
+    font-size: 16px - 2px;
+    padding: 10px * 2;
+}
+
+.sidebar {
+    width: percentage(math.div(300, 800));
+}
