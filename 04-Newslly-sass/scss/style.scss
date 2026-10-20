@@ -5,6 +5,7 @@ $color-main: #202124;
 $color-accent: #fa6980;
 $color-bg: #f6f6f6;
 $color-label: #bbb;
+$color-border: #ddd;
 
 $font-family-base: Helvetica,
     Arial,
@@ -112,7 +113,7 @@ body {
     padding-left: 26px;
     color: $color-label;
     font-size: 12px;
-    background: url(./images/icon_time.png) no-repeat left center;
+    background: url(../images/icon_time.png) no-repeat left center;
 }
 
 /* btn */
@@ -134,7 +135,15 @@ body {
     }
 }
 
+.btn--info {
+    color: #fff;
+    background-color: $color-main;
+}
+
+
+/* index.html --- */
 .news {
+    padding-bottom: 60px;
 
     &__inner {
         @include inner();
@@ -142,5 +151,68 @@ body {
 
     &__title {
         @include title-main();
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px percentage(math.div(40, 800));
+    }
+}
+
+.trending {
+    padding: 60px 0;
+    background-color: $color-bg;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        @include title-main();
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px percentage(math.div(40, 800));
+    }
+}
+
+
+/* about.html */
+
+.blog {
+    padding-bottom: 60px;
+
+    &__inner {
+        @include inner();
+    }
+
+    .post {
+        &__title {
+            padding-bottom: 10px;
+            border-bottom: 1px solid $color-border;
+        }
+    }
+
+}
+
+.discovery {
+    padding: 60px 0;
+    background-color: $color-bg;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        @include title-main();
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 60px percentage(math.div(40, 800));
     }
 }
