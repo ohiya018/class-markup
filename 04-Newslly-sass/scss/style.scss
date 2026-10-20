@@ -133,11 +133,11 @@ body {
     &:hover {
         background-color: $color-main;
     }
-}
 
-.btn--info {
-    color: #fff;
-    background-color: $color-main;
+    &__info {
+        color: #fff;
+        background-color: $color-main;
+    }
 }
 
 
@@ -187,6 +187,11 @@ body {
 
     &__inner {
         @include inner();
+    }
+
+    &__list {
+        display: grid;
+        gap: 60px percentage(math.div(40, 800));
     }
 
     .post {
