@@ -1,5 +1,6 @@
 body {
   color: #888;
+  font-size: 14px;
   font-family: Helvetica, Arial, sans-serif;
   line-height: 1.7142857143;
   letter-spacing: 0.05em;
@@ -10,26 +11,13 @@ body img {
   vertical-align: bottom;
 }
 
-.title {
-  color: #202124;
-}
-
-.btn {
-  background-color: #fa6980;
-  color: #fff;
-  transition: 0.3s;
-}
-.btn:hover {
-  background-color: #202124;
-}
-
 .header {
   padding: 30px 0 60px;
   text-align: center;
 }
 .header__inner {
   max-width: 800px;
-  width: 88%;
+  width: 87.5%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -39,8 +27,8 @@ body img {
   background-color: #202124;
 }
 .footer__inner {
-  max-width: 800px;
-  width: 88%;
+  max-width: 1200px;
+  width: 87.5%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -49,12 +37,77 @@ body img {
   color: #fff;
 }
 
-.box {
-  width: 150px;
-  font-size: 14px;
-  padding: 20px;
+/* modules
+------------------------------ */
+.post__category {
+  margin-bottom: 10px;
+  color: #fa6980;
+  font-size: 12px;
+  font-style: oblique;
+  text-transform: uppercase;
+}
+.post__title {
+  margin-bottom: 15px;
+  color: #202124;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.2777777778;
 }
 
-.sidebar {
-  width: 37.5%;
+.card {
+  background-color: #fff;
+}
+.card__body {
+  padding: 35px;
+}
+.card__title {
+  margin-bottom: 15px;
+  color: #202124;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.2777777778;
+}
+
+/* time */
+.time {
+  margin-top: 20px;
+  padding-left: 26px;
+  color: #bbb;
+  font-size: 12px;
+  background: url(./images/icon_time.png) no-repeat left center;
+}
+
+/* btn */
+.btn {
+  display: block;
+  width: 160px;
+  margin-top: 25px;
+  margin-left: auto;
+  padding: 14px;
+  background-color: #fa6980;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+.btn:hover {
+  background-color: #202124;
+}
+
+.news__inner {
+  max-width: 800px;
+  width: 87.5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.news__title {
+  margin-bottom: 30px;
+  padding-left: 10px;
+  border-left: 10px solid #fa6980;
+  color: #202124;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.2916666667;
+  text-transform: uppercase;
 }/*# sourceMappingURL=style.css.map */

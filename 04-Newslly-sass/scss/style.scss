@@ -3,19 +3,36 @@
 $color-text: #888;
 $color-main: #202124;
 $color-accent: #fa6980;
+$color-bg: #f6f6f6;
+$color-label: #bbb;
+
 $font-family-base: Helvetica,
     Arial,
     sans-serif;
 
-@mixin inner() {
-    max-width: 800px;
-    width: 88%;
+// 引数はよく変わるものを最初に設定する
+// (このコメントは出力されない)
+@mixin inner($mw: 800px, $w: percentage(math.div(560, 640))) {
+    max-width: $mw;
+    width: $w;
     margin-left: auto;
     margin-right: auto;
 }
 
+@mixin title-main {
+    margin-bottom: 30px;
+    padding-left: 10px;
+    border-left: 10px solid $color-accent;
+    color: $color-main;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: math.div(31, 24);
+    text-transform: uppercase;
+}
+
 body {
     color: $color-text;
+    font-size: 14px;
     font-family: $font-family-base;
     line-height: math.div(24, 14);
     letter-spacing: #{math.div(50, 1000)}em;
@@ -24,20 +41,6 @@ body {
         max-width: 100%;
         height: auto;
         vertical-align: bottom;
-    }
-}
-
-.title {
-    color: $color-main;
-}
-
-.btn {
-    background-color: $color-accent;
-    color: #fff;
-    transition: .3s;
-
-    &:hover {
-        background-color: $color-main;
     }
 }
 
@@ -55,7 +58,7 @@ body {
     background-color: $color-main;
 
     &__inner {
-        @include inner();
+        @include inner(1200px);
     }
 
     small {
@@ -64,12 +67,80 @@ body {
     }
 }
 
-.box {
-    width: 100px + 50px;
-    font-size: 16px - 2px;
-    padding: 10px * 2;
+/* modules
+------------------------------ */
+.post {
+
+
+    &__category {
+        margin-bottom: 10px;
+        color: $color-accent;
+        font-size: 12px;
+        font-style: oblique;
+        text-transform: uppercase;
+    }
+
+    &__title {
+        margin-bottom: 15px;
+        color: $color-main;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: math.div(23, 18);
+    }
 }
 
-.sidebar {
-    width: percentage(math.div(300, 800));
+
+.card {
+    background-color: #fff;
+
+    &__body {
+        padding: 35px;
+    }
+
+    &__title {
+        margin-bottom: 15px;
+        color: $color-main;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: math.div(23, 18);
+    }
+}
+
+/* time */
+.time {
+    margin-top: 20px;
+    padding-left: 26px;
+    color: $color-label;
+    font-size: 12px;
+    background: url(./images/icon_time.png) no-repeat left center;
+}
+
+/* btn */
+.btn {
+    display: block;
+    width: 160px;
+    margin-top: 25px;
+    margin-left: auto;
+    padding: 14px;
+    background-color: $color-accent;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+
+    &:hover {
+        background-color: $color-main;
+    }
+}
+
+.news {
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        @include title-main();
+    }
 }
