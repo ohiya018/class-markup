@@ -1,1 +1,91 @@
-/*# sourceMappingURL=style.css.map */
+@charset "UTF-8";
+body {
+  color: #9E9E9E;
+  font-size: 16px;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.6875;
+  letter-spacing: 0.02;
+}
+body img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+.header {
+  padding: 40px 0 100px;
+}
+.header__inner {
+  max-width: 1200px;
+  width: 87.5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer {
+  padding: 60px 0;
+  background-color: #5EB6E1;
+  text-align: center;
+}
+.footer__inner {
+  max-width: 1200px;
+  width: 87.5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.footer small {
+  font-size: 12px;
+  color: #fff;
+  line-height: 1.6666666667;
+}
+
+/* modules  */
+/* btn */
+.btn {
+  display: block;
+  width: 200px;
+  margin-top: 60px;
+  padding: 25px 0;
+  background-color: #5EB6E1;
+  color: #fff;
+  text-align: center;
+}
+.btn:hover {
+  background-color: #FF1D6A;
+}
+
+/* index.html */
+.welcome__inner {
+  max-width: 1200px;
+  width: 87.5%;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 6.6666666667%;
+}
+.welcome__title {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 80px;
+  padding-bottom: 20px;
+  color: #292F39;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1.3125;
+  text-transform: uppercase;
+}
+.welcome__title::after {
+  content: "";
+  position: absolute;
+  left: 0%;
+  bottom: 0;
+  /*線の上下位置*/
+  display: inline-block;
+  width: 120px;
+  /*線の長さ*/
+  height: 2px;
+  /*線の太さ*/
+  background-color: #5EB6E1;
+  /*線の色*/
+}/*# sourceMappingURL=style.css.map */
