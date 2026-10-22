@@ -46,8 +46,10 @@ body img {
   width: 200px;
   margin-top: 60px;
   padding: 25px 0;
+  border-radius: 10px;
   background-color: #5EB6E1;
   color: #fff;
+  font-weight: bold;
   text-align: center;
 }
 .btn:hover {
@@ -55,13 +57,16 @@ body img {
 }
 
 /* index.html */
+.welcome {
+  margin-bottom: 100px;
+}
 .welcome__inner {
   max-width: 1200px;
   width: 87.5%;
   margin-left: auto;
   margin-right: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 620fr 500fr;
   gap: 0 6.6666666667%;
 }
 .welcome__title {
@@ -71,9 +76,9 @@ body img {
   padding-bottom: 20px;
   color: #292F39;
   font-size: 32px;
+  font-family: "Times New Roman", Times, serif;
   font-weight: bold;
   line-height: 1.3125;
-  text-transform: uppercase;
 }
 .welcome__title::after {
   content: "";

@@ -27,9 +27,9 @@ $font-family-text: Helvetica,
     padding-bottom: 20px;
     color: $color-main;
     font-size: 32px;
+    font-family: $font-family-main;
     font-weight: bold;
     line-height: math.div(42, 32);
-    text-transform: uppercase;
 
     &::after {
         content: '';
@@ -92,8 +92,10 @@ body {
     width: 200px;
     margin-top: 60px;
     padding: 25px 0;
+    border-radius: 10px;
     background-color: $color-bar;
     color: #fff;
+    font-weight: bold;
     text-align: center;
 
     &:hover {
@@ -103,10 +105,12 @@ body {
 
 /* index.html */
 .welcome {
+    margin-bottom: 100px;
+
     &__inner {
         @include inner();
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 620fr 500fr;
         gap: 0 percentage(math.div(80, 1200));
     }
 
