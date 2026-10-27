@@ -20,6 +20,24 @@ body img {
   width: 87.5%;
   margin-left: auto;
   margin-right: auto;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.g-nav__list {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 30px;
+}
+.g-nav__item a {
+  color: #292F39;
+  font-weight: bold;
+  transition: 0.2s;
+}
+.g-nav__item a:hover {
+  color: #FF1D6A;
 }
 
 .footer {
@@ -33,13 +51,29 @@ body img {
   margin-left: auto;
   margin-right: auto;
 }
-.footer small {
+.footer__copyright small {
   font-size: 12px;
   color: #fff;
   line-height: 1.6666666667;
 }
 
 /* modules  */
+.panel__pic {
+  position: relative;
+}
+.panel__label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  line-height: 1.2916666667;
+}
+
 /* btn */
 .btn {
   display: block;
@@ -56,6 +90,18 @@ body img {
   background-color: #FF1D6A;
 }
 
+.card__title {
+  margin-top: 30px;
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 1.2916666667;
+}
+.card__text {
+  margin-top: 20px;
+  color: #FF1D6A;
+  font-weight: bold;
+}
+
 /* index.html */
 .welcome {
   margin-bottom: 100px;
@@ -67,11 +113,10 @@ body img {
   margin-right: auto;
   display: grid;
   grid-template-columns: 620fr 500fr;
-  gap: 0 6.6666666667%;
+  gap: 0 80px;
 }
 .welcome__title {
   position: relative;
-  display: inline-block;
   margin-bottom: 80px;
   padding-bottom: 20px;
   color: #292F39;
@@ -93,4 +138,174 @@ body img {
   /*線の太さ*/
   background-color: #5EB6E1;
   /*線の色*/
+}
+
+.team {
+  background-color: #292F39;
+  color: #fff;
+}
+.team .intro__title {
+  color: #fff;
+}
+.team {
+  padding: 100px 0;
+}
+.team__inner {
+  max-width: 1200px;
+  width: 87.5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.team__info {
+  margin-bottom: 80px;
+}
+.team__title {
+  position: relative;
+  margin-bottom: 80px;
+  padding-bottom: 20px;
+  color: #292F39;
+  font-size: 32px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  line-height: 1.3125;
+}
+.team__title::after {
+  content: "";
+  position: absolute;
+  left: 0%;
+  bottom: 0;
+  /*線の上下位置*/
+  display: inline-block;
+  width: 120px;
+  /*線の長さ*/
+  height: 2px;
+  /*線の太さ*/
+  background-color: #5EB6E1;
+  /*線の色*/
+}
+.team__title {
+  color: #fff;
+  text-align: center;
+}
+.team__title::after {
+  left: 45%;
+}
+.team__content {
+  text-align: center;
+}
+.team__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+/* about.html */
+.clasess {
+  margin-bottom: 100px;
+}
+.clasess__inner {
+  max-width: 1200px;
+  width: 87.5%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.clasess__title {
+  position: relative;
+  margin-bottom: 80px;
+  padding-bottom: 20px;
+  color: #292F39;
+  font-size: 32px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  line-height: 1.3125;
+}
+.clasess__title::after {
+  content: "";
+  position: absolute;
+  left: 0%;
+  bottom: 0;
+  /*線の上下位置*/
+  display: inline-block;
+  width: 120px;
+  /*線の長さ*/
+  height: 2px;
+  /*線の太さ*/
+  background-color: #5EB6E1;
+  /*線の色*/
+}
+.clasess__title {
+  text-align: center;
+}
+.clasess__title::after {
+  left: 45%;
+}
+.clasess__text {
+  margin-bottom: 40px;
+}
+.clasess__panels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  padding-top: 40px;
+}
+
+.testimonials {
+  background-color: #292F39;
+  color: #fff;
+}
+.testimonials .intro__title {
+  color: #fff;
+}
+.testimonials {
+  padding: 100px 0;
+}
+.testimonials__inner {
+  max-width: 1200px;
+  width: 87.5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.testimonials__info {
+  margin-bottom: 80px;
+}
+.testimonials__title {
+  position: relative;
+  margin-bottom: 80px;
+  padding-bottom: 20px;
+  color: #292F39;
+  font-size: 32px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  line-height: 1.3125;
+}
+.testimonials__title::after {
+  content: "";
+  position: absolute;
+  left: 0%;
+  bottom: 0;
+  /*線の上下位置*/
+  display: inline-block;
+  width: 120px;
+  /*線の長さ*/
+  height: 2px;
+  /*線の太さ*/
+  background-color: #5EB6E1;
+  /*線の色*/
+}
+.testimonials__title {
+  color: #fff;
+  text-align: center;
+}
+.testimonials__title::after {
+  left: 45%;
+}
+.testimonials__content {
+  text-align: center;
+}
+.testimonials__list {
+  display: grid;
+  grid-template-columns: none;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */
