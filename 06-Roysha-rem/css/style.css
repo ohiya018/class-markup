@@ -4,21 +4,21 @@
   margin-left: 5%;
   margin-top: 5%;
   /* 上下の余白の%は親要素の横幅が基準 */
-  font-size: 100%;
+  font-size: 2em;
   /*
-      親要素の何倍か？bodyのデフォルトは16px
-      Google Chromeは10pxより小さくならない
+  親要素の何倍か？（bodyのディフォルトは16px）
+  Google Chromeは10pxより小さくならない
   */
 }
 .intro__catch {
-  width: 10em;
-  padding: 1em;
   color: #256BE6;
   font-size: 0.4375em;
+  padding: 1em;
+  width: 10em;
 }
 .intro__content {
+  font-size: 2rem;
   margin: 1rem;
-  font-size: 1rem;
 }
 
 .btn {
@@ -27,6 +27,6 @@
   color: #fff;
   text-align: center;
   padding: 0.5em 0.8em;
-  font-size: 3rem;
-  width: 9emq;
+  font-size: 5rem;
+  width: 9em;
 }/*# sourceMappingURL=style.css.map */
