@@ -1,35 +1,62 @@
+@use "sass:math";
+
 $color-main: #256BE6;
+$color-text: #6C6C6F;
+$color-base: #262934;
+
+$font-size-base: 16;
+
+@function rem($px-value) {
+    @return #{math.div($px-value, $font-size-base)}rem;
+}
+
+@function em($px-value, $font-size-self: 16) {
+    @return #{math.div($px-value, $font-size-self)}em;
+}
+
+@function ls($xd-value) {
+    @return #{math.div($xd-value, 1000)}em;
+}
+
+@function pct($target-px, $parent-px) {
+    @return math.percentage(math.div($target-px, $parent-px));
+}
+
+body {
+    color: $color-text;
+    font-size: rem(14);
+    /* 14 / 16 = 0.875倍 */
+    font-family: Helvetica, Arial, sans-serif;
+    line-height: math.div(28, 16);
+    letter-spacing: ls(50);
+}
 
 .intro {
-    width: 50%;
-    margin-left: 5%;
-    margin-top: 5%;
-    /* 上下の余白の%は親要素の横幅が基準 */
-    font-size: 2em;
-    /*
-    親要素の何倍か？（bodyのディフォルトは16px）
-    Google Chromeは10pxより小さくならない
-    */
-
     &__catch {
+        margin-bottom: em(20, 12);
+        font-size: rem(12);
+        /* 12 / 16 = 0.75倍 */
         color: $color-main;
-        font-size: 0.4375em;
-        padding: 1em;
-        width: 10em;
     }
 
-    &__content {
-        font-size: 2rem;
-        margin: 1rem;
+    &__title {
+        margin-bottom: rem(30);
+        color: $color-base;
+        font-size: rem(36);
+        font-weight: bold;
+        line-height: math.div(48, 36);
     }
 }
 
 .btn {
     display: block;
-    background-color: $color-main;
+    width: em(200, 14);
+    padding: em(20, 14);
+    border-radius: 9999px;
     color: #fff;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: ls(75);
     text-align: center;
-    padding: 0.5em 0.8em;
-    font-size: 5rem;
-    width: 9em;
+    background-color: $color-main;
 }

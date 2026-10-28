@@ -1,32 +1,36 @@
 @charset "UTF-8";
-.intro {
-  width: 50%;
-  margin-left: 5%;
-  margin-top: 5%;
-  /* 上下の余白の%は親要素の横幅が基準 */
-  font-size: 2em;
-  /*
-  親要素の何倍か？（bodyのディフォルトは16px）
-  Google Chromeは10pxより小さくならない
-  */
+body {
+  color: #6C6C6F;
+  font-size: 0.875rem;
+  /* 14 / 16 = 0.875倍 */
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.75;
+  letter-spacing: 0.05em;
 }
+
 .intro__catch {
+  margin-bottom: 1.6666666667em;
+  font-size: 0.75rem;
+  /* 12 / 16 = 0.75倍 */
   color: #256BE6;
-  font-size: 0.4375em;
-  padding: 1em;
-  width: 10em;
 }
-.intro__content {
-  font-size: 2rem;
-  margin: 1rem;
+.intro__title {
+  margin-bottom: 1.875rem;
+  color: #262934;
+  font-size: 2.25rem;
+  font-weight: bold;
+  line-height: 1.3333333333;
 }
 
 .btn {
   display: block;
-  background-color: #256BE6;
+  width: 14.2857142857em;
+  padding: 1.4285714286em;
+  border-radius: 9999px;
   color: #fff;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: 0.075em;
   text-align: center;
-  padding: 0.5em 0.8em;
-  font-size: 5rem;
-  width: 9em;
+  background-color: #256BE6;
 }/*# sourceMappingURL=style.css.map */
