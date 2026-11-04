@@ -1,6 +1,6 @@
 body {
   color: #888;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-family: Helvetica, Arial, sans-serif;
   line-height: 1.7142857143;
   letter-spacing: 0.05em;
@@ -12,7 +12,7 @@ body img {
 }
 
 .header {
-  padding: 30px 0 60px;
+  padding: 1.875rem 0 3.75rem;
   text-align: center;
 }
 .header__inner {
@@ -23,7 +23,7 @@ body img {
 }
 
 .footer {
-  padding: 100px 0 40px;
+  padding: 6.25rem 0 2.5rem;
   background-color: #202124;
 }
 .footer__inner {
@@ -33,23 +33,23 @@ body img {
   margin-right: auto;
 }
 .footer small {
-  font-size: 12px;
+  font-size: 0.75rem;
   color: #fff;
 }
 
 /* modules
 ------------------------------ */
 .post__category {
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   color: #fa6980;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-style: oblique;
   text-transform: uppercase;
 }
 .post__title {
-  margin-bottom: 15px;
+  margin-bottom: 0.9375rem;
   color: #202124;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: bold;
   line-height: 1.2777777778;
 }
@@ -58,12 +58,12 @@ body img {
   background-color: #fff;
 }
 .card__body {
-  padding: 35px;
+  padding: 2.1875rem;
 }
 .card__title {
-  margin-bottom: 15px;
+  margin-bottom: 0.9375rem;
   color: #202124;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: bold;
   line-height: 1.2777777778;
 }
@@ -80,13 +80,13 @@ body img {
 /* btn */
 .btn {
   display: block;
-  width: 160px;
-  margin-top: 25px;
+  width: 16.6666666667em;
+  margin-top: 1.5625rem;
   margin-left: auto;
-  padding: 14px;
+  padding: 0.875rem;
   background-color: #fa6980;
   color: #fff;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
@@ -101,7 +101,7 @@ body img {
 
 /* index.html --- */
 .news {
-  padding-bottom: 60px;
+  padding-bottom: 3.75rem;
 }
 .news__inner {
   max-width: 800px;
@@ -110,11 +110,11 @@ body img {
   margin-right: auto;
 }
 .news__title {
-  margin-bottom: 30px;
-  padding-left: 10px;
-  border-left: 10px solid #fa6980;
+  margin-bottom: 1.875rem;
+  padding-left: 0.625rem;
+  border-left: 0.625rem solid #fa6980;
   color: #202124;
-  font-size: 24px;
+  font-size: clamp(1.125rem, 3vw, 1.5rem);
   font-weight: bold;
   line-height: 1.2916666667;
   text-transform: uppercase;
@@ -122,11 +122,11 @@ body img {
 .news__list {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px 5%;
+  gap: 3.75rem 5%;
 }
 
 .trending {
-  padding: 60px 0;
+  padding: 3.75rem 0;
   background-color: #f6f6f6;
 }
 .trending__inner {
@@ -136,11 +136,11 @@ body img {
   margin-right: auto;
 }
 .trending__title {
-  margin-bottom: 30px;
-  padding-left: 10px;
-  border-left: 10px solid #fa6980;
+  margin-bottom: 1.875rem;
+  padding-left: 0.625rem;
+  border-left: 0.625rem solid #fa6980;
   color: #202124;
-  font-size: 24px;
+  font-size: clamp(1.125rem, 3vw, 1.5rem);
   font-weight: bold;
   line-height: 1.2916666667;
   text-transform: uppercase;
@@ -148,12 +148,12 @@ body img {
 .trending__list {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px 5%;
+  gap: 3.75rem 5%;
 }
 
 /* about.html */
 .blog {
-  padding-bottom: 60px;
+  padding-bottom: 3.75rem;
 }
 .blog__inner {
   max-width: 800px;
@@ -163,15 +163,15 @@ body img {
 }
 .blog__list {
   display: grid;
-  gap: 60px 5%;
+  gap: 3.75rem 5%;
 }
 .blog .post__title {
-  padding-bottom: 10px;
+  padding-bottom: 0.625rem;
   border-bottom: 1px solid #ddd;
 }
 
 .discovery {
-  padding: 60px 0;
+  padding: 3.75rem 0;
   background-color: #f6f6f6;
 }
 .discovery__inner {
@@ -181,11 +181,11 @@ body img {
   margin-right: auto;
 }
 .discovery__title {
-  margin-bottom: 30px;
-  padding-left: 10px;
-  border-left: 10px solid #fa6980;
+  margin-bottom: 1.875rem;
+  padding-left: 0.625rem;
+  border-left: 0.625rem solid #fa6980;
   color: #202124;
-  font-size: 24px;
+  font-size: clamp(1.125rem, 3vw, 1.5rem);
   font-weight: bold;
   line-height: 1.2916666667;
   text-transform: uppercase;
@@ -193,5 +193,5 @@ body img {
 .discovery__list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 60px 5%;
+  gap: 3.75rem 5%;
 }/*# sourceMappingURL=style.css.map */

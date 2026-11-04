@@ -42,7 +42,7 @@ body {
     &__title {
         margin-bottom: rem(30);
         color: $color-base;
-        font-size: rem(36);
+        font-size: clamp(rem(24), 3vw, rem(36));
         font-weight: bold;
         line-height: math.div(48, 36);
     }
@@ -59,4 +59,62 @@ body {
     letter-spacing: ls(75);
     text-align: center;
     background-color: $color-main;
+}
+
+.header {
+    position: fixed;
+    background-color: $color-main;
+    width: 100vw;
+    height: 10vh;
+    height: 10dvh;
+}
+
+/*
+100vwはブラウザによって横スクロールバーが発生するためあまり使わない
+*/
+
+.mainvisual {
+    background-color: #ddd;
+    min-height: clamp(300px, 40vw, 600px);
+    // min-height: 100dvh;
+    // 画面が極端に低い時に中身がはみ出ないよう min-height が安全
+    display: grid;
+    place-items: center;
+    // これだけで子要素（__inner）が上下左右中央に配置される！
+    padding: 2rem; // 画面端にくっつかないための余白
+
+    &__inner {
+        text-align: center;
+    }
+}
+
+.gnav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; // 100vw ではなく 100% にする
+    height: 100vh;
+    height: 100dvh; // 画面の高さいっぱいに固定
+    background-color: rgba(0, 0, 0, 0.9);
+
+    // 高さが足りるときは上下左右中央に配置
+    display: none;
+    place-items: center;
+
+    // 高さが足りないときはメニュー内部で縦スクロールさせる！
+    overflow-y: auto;
+    padding: 4rem 1.5rem;
+    // スクロール時に上下の項目が画面端や閉じるボタンと重ならないための余白
+
+    &__list {
+        display: grid;
+        gap: 1.5rem;
+        text-align: center;
+    }
+}
+
+.card {
+    &__title {
+        font-size: clamp(rem(16), 1.8vw, rem(22));
+    }
 }

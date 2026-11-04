@@ -17,7 +17,7 @@ body {
 .intro__title {
   margin-bottom: 1.875rem;
   color: #262934;
-  font-size: 2.25rem;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
   font-weight: bold;
   line-height: 1.3333333333;
 }
@@ -33,4 +33,49 @@ body {
   letter-spacing: 0.075em;
   text-align: center;
   background-color: #256BE6;
+}
+
+.header {
+  position: fixed;
+  background-color: #256BE6;
+  width: 100vw;
+  height: 10vh;
+  height: 10dvh;
+}
+
+/*
+100vwはブラウザによって横スクロールバーが発生するためあまり使わない
+*/
+.mainvisual {
+  background-color: #ddd;
+  min-height: clamp(300px, 40vw, 600px);
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+.mainvisual__inner {
+  text-align: center;
+}
+
+.gnav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: none;
+  place-items: center;
+  overflow-y: auto;
+  padding: 4rem 1.5rem;
+}
+.gnav__list {
+  display: grid;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.card__title {
+  font-size: clamp(1rem, 1.8vw, 1.375rem);
 }/*# sourceMappingURL=style.css.map */
