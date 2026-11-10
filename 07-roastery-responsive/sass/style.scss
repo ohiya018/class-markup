@@ -1,0 +1,158 @@
+@use "sass:math";
+@use "sass:map";
+
+// --- Variables ---
+
+// Colors
+$color-text: #3d352e;
+$color-base: #fbf9f5;
+$color-main: #2c4c3e;
+$color-accent: #c86432;
+$color-bg: #f2ece1;
+
+// Typography
+$font-size-base: 16;
+$font-family-gothic: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+$font-family-mincho: "Times New Roman", Times, "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+
+// Breakpoints
+$breakpoints: (
+    "sm": 640px,
+    // 大型スマホ〜小型タブレット
+    "md": 768px,
+    // 一般的なタブレット
+    "lg": 1024px,
+    // ノートPC・デスクトップ
+    "xl": 1280px // 大型ディスプレイ
+);
+
+// --- Functions ---
+
+// pxをemに変換
+@function em($px-value, $font-size-self: 16) {
+    @return #{math.div($px-value, $font-size-self)}em;
+}
+
+
+// pxをremに変換
+@function rem($px-value) {
+    @return #{math.div($px-value, $font-size-base)}rem;
+}
+
+// XD/Figmaのトラッキング値をemに変換
+@function ls($xd-value) {
+    @return #{math.div($xd-value, 1000)}em;
+}
+
+// 親要素の幅に対する「%」を自動計算
+@function pct($target-px, $parent-px) {
+    @return math.percentage(math.div($target-px, $parent-px));
+}
+
+// --- Mixins ---
+
+// メディアクエリ（モバイルファースト）
+@mixin mq($breakpoint: md) {
+    $width: map.get($breakpoints, $breakpoint);
+
+    @media (width >=$width) {
+        @content;
+    }
+}
+
+// インナーコンテナ幅の指定
+@mixin inner($mw: 1200px, $w: 88%) {
+    max-width: $mw;
+    width: $w;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    color: $color-text;
+    font-size: rem(16);
+    font-family: $font-family-gothic;
+    line-height: 1.75;
+    background-color: $color-base;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: auto;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+/* utility */
+.u-show-sp {
+    display: block;
+
+    @include mq() {
+        display: none;
+    }
+}
+
+.u-keepall {
+    word-break: keep-all;
+}
+
+/* module */
+.intro {
+    &__catch {
+        margin-bottom: rem(12);
+        color: $color-accent;
+        font-size: rem(13);
+        font-weight: bold;
+        letter-spacing: 0.1em;
+    }
+
+    &__title {
+        margin-bottom: rem(24);
+        color: $color-main;
+        font-size: clamp(rem(22), 3vw, rem(34));
+        font-weight: bold;
+        line-height: 1.35;
+        text-wrap: blance;
+
+        span {
+            display: inline-block;
+        }
+    }
+
+    &__content {
+        display: grid;
+        row-gap: rem(16);
+    }
+
+    &--center {
+        text-align: center;
+    }
+}
+
+/* index.html */
+.hero {
+    padding: rem(40) 0 rem(64);
+
+    @include mq() {
+        padding: rem(56) 0 rem(80);
+    }
+
+    &__inner {
+        @include inner();
+    }
+
+    &__image {
+        img {
+            border-radius: 25px;
+        }
+    }
+}
+
+.lead-text {
+    font-weight: bold;
+    color: $color-main;
+    word-break: keep-all;
+}
