@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About &amp; Info - KOMA ROASTERY</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css/destyle.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <h1 class="header__logo">
+        <a class="header__logo-link" href="./index.html">
+          <img class="header__logo-pic" src="./images/img_logo.png" srcset="./images/img_logo.png 1x, ./images/img_logo@2x.png 2x" alt="KOMA ROASTERY" width="200" height="36">
+        </a>
+      </h1>
+      <nav class="gnav">
+        <ul class="gnav__list">
+          <li class="gnav__item"><a class="gnav__link" href="./index.html">TOP</a></li>
+          <li class="gnav__item"><a class="gnav__link gnav__link--current" href="./about.html">ABOUT &amp; INFO</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Section 1: Roaster's Pickup（コンテナクエリ @container の実践） -->
+    <section class="pickup">
+      <div class="pickup__inner">
+        <div class="pickup__info intro">
+          <p class="intro__catch">ROASTER'S PICKUP</p>
+          <h2 class="intro__title">
+            <span>注目のコーヒー豆と</span><span>週末ワークショップ</span>
+          </h2>
+          <div class="intro__content">
+            <p>
+              同じ「.card」モジュールを、幅の広いメイン領域と幅の狭いサイド領域に配置しています。<br class="u-hide-sp">コンテナクエリ（@container）によって、親コンテナの幅が480px以上のときだけカードが横並びレイアウトに変化します。
+            </p>
+          </div>
+        </div>
+
+        <div class="pickup__layout">
+          <!-- 左カラム：広いメイン領域（.card-wrapper） -->
+          <div class="pickup__main card-wrapper">
+            <article class="card">
+              <div class="card__pic">
+                <img src="./images/pic_pickup01.jpg" alt="季節のブレンド豆 200g" width="560" height="380">
+              </div>
+              <div class="card__body">
+                <span class="card__tag">ONLINE &amp; SHOP</span>
+                <h3 class="card__title">季節のハウスブレンド（200g）</h3>
+                <p class="card__text">ダークチョコレートのような深いコクと、オレンジピールの爽やかな余韻が楽しめる中深煎りブレンドです。ご自宅用の豆販売も承っています。</p>
+                <p class="card__price">¥1,680</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- 右カラム：狭いサイド領域（.card-wrapper） -->
+          <aside class="pickup__side card-wrapper">
+            <article class="card">
+              <div class="card__pic">
+                <img src="./images/pic_pickup02.jpg" alt="週末テイスティング体験" width="560" height="380">
+              </div>
+              <div class="card__body">
+                <span class="card__tag">WORKSHOP</span>
+                <h3 class="card__title">土曜朝のハンドドリップ教室</h3>
+                <p class="card__text">抽出温度や挽き目による味の違いを飲み比べる少人数セミナーです。</p>
+                <p class="card__price">¥3,500</p>
+              </div>
+            </article>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Cafe & Roastery Schedule（パターンA：横スクロールテーブル） -->
+    <section class="schedule">
+      <div class="schedule__inner">
+        <div class="schedule__info intro intro--center">
+          <p class="intro__catch">OPENING HOURS</p>
+          <h2 class="intro__title">
+            <span>営業時間・焙煎スケジュール</span>
+          </h2>
+          <div class="intro__content">
+            <p>時間帯によって提供メニューや焙煎体験の実施内容が異なります。</p>
+          </div>
+        </div>
+
+        <p class="schedule__note">※スマートフォンでは表を横にスクロールしてご覧いただけます ⇄</p>
+
+        <div class="table-scroll">
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th>曜日</th>
+                <th>モーニング (8:00-11:00)</th>
+                <th>カフェ＆ランチ (11:00-17:00)</th>
+                <th>イブニング (17:00-20:00)</th>
+                <th>備考</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>月〜金</th>
+                <td>営業中（焼きたてパン提供）</td>
+                <td>営業中（L.O. 16:30）</td>
+                <td>豆販売・テイクアウトのみ</td>
+                <td>平日限定モーニングセットあり</td>
+              </tr>
+              <tr>
+                <th>土日祝</th>
+                <td>ワークショップ開催（要予約）</td>
+                <td>営業中（L.O. 16:30）</td>
+                <td>営業中（L.O. 19:30）</td>
+                <td>限定シングルオリジン提供日</td>
+              </tr>
+              <tr>
+                <th>水曜</th>
+                <td>生豆の選別・焙煎仕込み</td>
+                <td>定休日</td>
+                <td>定休日</td>
+                <td>祝日の場合は翌木曜が休業</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Shop & Company Profile（パターンB：カード型変形テーブル） -->
+    <section class="company">
+      <div class="company__inner">
+        <div class="company__info intro">
+          <p class="intro__catch">SHOP &amp; COMPANY</p>
+          <h2 class="intro__title">
+            <span>店舗・運営会社概要</span>
+          </h2>
+          <div class="intro__content">
+            <p>
+              スマホでは1項目ずつ縦積みのブロックに変形し、画面幅700px以上で横並びの表組みに切り替わります。
+            </p>
+          </div>
+          <a class="btn" href="./index.html">トップページへ戻る</a>
+        </div>
+
+        <div class="company__detail">
+          <table class="company-table">
+            <tbody>
+              <tr>
+                <th>店舗・屋号</th>
+                <td>KOMA ROASTERY（コマ・ロースタリー）</td>
+              </tr>
+              <tr>
+                <th>運営会社</th>
+                <td>株式会社コマ・コーヒーワークス</td>
+              </tr>
+              <tr>
+                <th>所在地</th>
+                <td>愛知県名古屋市中村区名駅3丁目14-15</td>
+              </tr>
+              <tr>
+                <th>設立</th>
+                <td>2021年4月1日</td>
+              </tr>
+              <tr>
+                <th>事業内容</th>
+                <td>スペシャリティコーヒー豆の自家焙煎・販売、カフェ運営、バリスタ育成事業</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__copyright">
+        <small>&copy; 2026 KOMA ROASTERY All Rights Reserved.</small>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
