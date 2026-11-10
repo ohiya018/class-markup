@@ -58,9 +58,10 @@
     <section class="concept">
       <div class="concept__inner">
         <!-- TODO [6-3 ③]: <picture> を使って AVIF / WebP / PNG の次世代フォーマット出し分けを実装しよう -->
-        <div class="concept__pic">
+        <picture class="concept__pic">
+          <source type="image/webp" srcset="./images/pic_roast.webp">
           <img src="./images/pic_roast.png" alt="ヴィンテージ焙煎機で丁寧にローストされるコーヒー豆" width="560" height="400">
-        </div>
+        </picture>
 
         <div class="concept__info intro">
           <p class="intro__catch">OUR ROASTING PHILOSOPHY</p>

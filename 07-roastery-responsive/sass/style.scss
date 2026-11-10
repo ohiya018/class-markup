@@ -9,6 +9,8 @@ $color-base: #fbf9f5;
 $color-main: #2c4c3e;
 $color-accent: #c86432;
 $color-bg: #f2ece1;
+$color-border: #dfd6c7;
+$color-white: #ffffff;
 
 // Typography
 $font-size-base: 16;
@@ -76,6 +78,71 @@ body {
     background-color: $color-base;
 }
 
+/* --- Header / Footer --- */
+.header {
+    padding: rem(20) 0;
+    background-color: $color-main;
+
+    &__inner {
+        @include inner();
+        display: grid;
+        gap: rem(16);
+        justify-items: center;
+
+        // 700px以上でロゴとナビを左右横並びに切り替え
+        @include mq(md) {
+            grid-auto-flow: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}
+
+.gnav {
+    &__list {
+        display: grid;
+        grid-auto-flow: column;
+        column-gap: rem(28);
+    }
+
+    &__link {
+        padding: rem(6) 0;
+        color: $color-white;
+        font-size: rem(14);
+        font-weight: bold;
+        letter-spacing: ls(80);
+        border-bottom: 2px solid transparent;
+        transition: border-color 0.2s;
+
+        &:hover,
+        &--current {
+            border-bottom-color: $color-accent;
+        }
+    }
+}
+
+.footer {
+    padding: rem(32) 0 rem(40);
+    background-color: $color-main;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__copyright {
+        color: $color-white;
+        text-align: center;
+
+        @include mq(md) {
+            text-align: right;
+        }
+
+        small {
+            font-size: rem(14);
+        }
+    }
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -132,6 +199,99 @@ p {
     }
 }
 
+.btn {
+    display: block;
+    width: 100%; // モバイルファースト：スマホでは指で押しやすく横幅いっぱい
+    margin-top: rem(32);
+    padding: 1.1em 1.5em;
+    border-radius: 9999px;
+    background-color: $color-main;
+    color: $color-white;
+    font-size: rem(15);
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: ls(50);
+    text-align: center;
+    transition: opacity 0.25s;
+
+    // [5-4] 700px以上ではボタン幅を 240px（15rem）に切り替え
+    @include mq(md) {
+        width: rem(240);
+    }
+
+    &:hover {
+        opacity: 0.85;
+    }
+
+    &--accent {
+        background-color: $color-accent;
+    }
+
+    &--center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.card {
+    display: grid;
+    gap: rem(20);
+    padding: rem(24);
+    border: 1px solid $color-border;
+    border-radius: rem(12);
+    background-color: $color-white;
+
+    // 親コンテナ（.card-wrapper）の横幅が 480px 以上になったら2カラム横並びに変化！
+    @container (width >=480px) {
+        grid-template-columns: 2fr 3fr;
+        align-items: center;
+        gap: rem(28);
+    }
+
+    &__pic {
+        img {
+            width: 100%;
+            border-radius: rem(8);
+        }
+    }
+
+    &__body {
+        display: grid;
+        gap: rem(10);
+    }
+
+    &__tag {
+        display: inline-block;
+        justify-self: start;
+        padding: rem(4) rem(10);
+        border-radius: rem(4);
+        background-color: $color-bg;
+        color: $color-main;
+        font-size: rem(11);
+        font-weight: bold;
+        letter-spacing: ls(80);
+    }
+
+    &__title {
+        color: $color-main;
+        font-size: clamp(rem(18), 2vw, rem(20));
+        font-weight: bold;
+        line-height: 1.4;
+    }
+
+    &__text {
+        font-size: rem(14);
+        line-height: 1.7;
+    }
+
+    &__price {
+        color: $color-accent;
+        font-size: rem(18);
+        font-weight: bold;
+    }
+}
+
+
 /* index.html */
 .hero {
     padding: rem(40) 0 rem(64);
@@ -155,4 +315,110 @@ p {
     font-weight: bold;
     color: $color-main;
     word-break: keep-all;
+}
+
+.menu {
+    padding: rem(64) 0;
+
+    @include mq(md) {
+        padding: rem(80) 0;
+    }
+
+    &__info {
+        max-width: rem(700);
+        margin: 0 auto rem(40);
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(rem(260), 1fr));
+        gap: rem(32);
+
+        @include mq() {
+            grid-template-columns: repeat(auto-fit, minmax(rem(260), 1fr));
+        }
+    }
+
+    &__inner {
+        @include inner();
+    }
+}
+
+/* --- about.html --- */
+.pickup {
+    padding: rem(56) 0 rem(64);
+
+    @include mq(md) {
+        padding: rem(72) 0 rem(80);
+    }
+
+    &__inner {
+        @include inner();
+    }
+
+    &__info {
+        margin-bottom: rem(40);
+    }
+
+    // [8-1] メイン領域（広）とサイドバー領域（狭）の非対称2カラムレイアウト
+    &__layout {
+        display: grid;
+        gap: rem(32);
+        align-items: start;
+
+        @include mq(md) {
+            grid-template-columns: 2fr 1fr;
+            column-gap: rem(40);
+        }
+    }
+}
+
+.schedule {
+    padding: rem(64) 0;
+    background-color: $color-bg;
+
+    @include mq(md) {
+        padding: rem(80) 0;
+    }
+
+    &__inner {
+        @include inner();
+    }
+
+    &__info {
+        max-width: rem(700);
+        margin: 0 auto rem(24);
+    }
+
+    &__note {
+        margin-bottom: rem(12);
+        color: $color-accent;
+        font-size: rem(13);
+        font-weight: bold;
+        text-align: right;
+
+        @include mq(md) {
+            display: none;
+        }
+    }
+}
+
+.company {
+    padding: rem(64) 0;
+
+    @include mq(md) {
+        padding: rem(80) 0;
+    }
+
+    &__inner {
+        @include inner();
+        display: grid;
+        gap: rem(40);
+        align-items: start;
+
+        @include mq(md) {
+            grid-template-columns: 5fr 7fr;
+            column-gap: rem(56);
+        }
+    }
 }
