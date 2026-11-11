@@ -25,7 +25,9 @@ $breakpoints: (
     // 一般的なタブレット
     "lg": 1024px,
     // ノートPC・デスクトップ
-    "xl": 1280px // 大型ディスプレイ
+    "xl": 1280px,
+    // 大型ディスプレイ
+    "table": 1112px
 );
 
 // --- Functions ---
@@ -233,6 +235,11 @@ p {
     }
 }
 
+.card-wrapper {
+    container-type: inline-size;
+    container-name: cardContainer;
+}
+
 .card {
     display: grid;
     gap: rem(20);
@@ -377,28 +384,12 @@ p {
 .pickup {
     padding: rem(56) 0 rem(64);
 
-    @include mq(md) {
+    @include mq() {
         padding: rem(72) 0 rem(80);
     }
 
     &__inner {
         @include inner();
-    }
-
-    &__info {
-        margin-bottom: rem(40);
-    }
-
-    // [8-1] メイン領域（広）とサイドバー領域（狭）の非対称2カラムレイアウト
-    &__layout {
-        display: grid;
-        gap: rem(32);
-        align-items: start;
-
-        @include mq(md) {
-            grid-template-columns: 2fr 1fr;
-            column-gap: rem(40);
-        }
     }
 }
 
@@ -406,7 +397,7 @@ p {
     padding: rem(64) 0;
     background-color: $color-bg;
 
-    @include mq(md) {
+    @include mq() {
         padding: rem(80) 0;
     }
 
@@ -414,40 +405,104 @@ p {
         @include inner();
     }
 
-    &__info {
-        max-width: rem(700);
-        margin: 0 auto rem(24);
-    }
-
     &__note {
-        margin-bottom: rem(12);
-        color: $color-accent;
-        font-size: rem(13);
-        font-weight: bold;
-        text-align: right;
-
-        @include mq(md) {
+        @include mq(table) {
             display: none;
         }
+    }
+}
+
+.table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: rem(8);
+    border-radius: rem(8);
+}
+
+.schedule-table {
+    width: 100%;
+    min-width: 640px;
+    border-collapse: collapse;
+    background-color: $color-white;
+
+    th,
+    td {
+        padding: rem(16) rem(20);
+        border: 1px solid $color-border;
+        white-space: nowrap;
+        font-size: rem(14);
+        text-align: left;
+    }
+
+    thead th {
+        background-color: $color-main;
+        color: $color-white;
+        font-weight: bold;
+    }
+
+    tbody th {
+        background-color: $color-bg;
+        color: $color-main;
+        font-weight: bold;
     }
 }
 
 .company {
     padding: rem(64) 0;
 
-    @include mq(md) {
+    @include mq() {
         padding: rem(80) 0;
     }
 
     &__inner {
         @include inner();
-        display: grid;
-        gap: rem(40);
-        align-items: start;
+    }
+}
 
-        @include mq(md) {
-            grid-template-columns: 5fr 7fr;
-            column-gap: rem(56);
+.company-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: $color-white;
+    border-top: 1px solid $color-border;
+
+    // モバイル表示（デフォルト）：tableの構造をblockに崩して縦積みにする
+    tr,
+    th,
+    td {
+        display: block;
+        width: 100%;
+    }
+
+    th {
+        padding: rem(14) rem(16) rem(6);
+        background-color: $color-bg;
+        color: $color-main;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    td {
+        padding: rem(10) rem(16) rem(16);
+        border-bottom: 1px solid $color-border;
+    }
+
+    // 700px以上：本来の横並びテーブルに戻す
+    @include mq(md) {
+        tr {
+            display: table-row;
+        }
+
+        th,
+        td {
+            display: table-cell;
+            width: auto;
+            padding: rem(18) rem(24);
+            border-bottom: 1px solid $color-border;
+            vertical-align: middle;
+        }
+
+        th {
+            width: rem(200);
         }
     }
 }
