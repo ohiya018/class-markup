@@ -317,6 +317,35 @@ p {
     word-break: keep-all;
 }
 
+.concept {
+    padding: rem(64) 0;
+    background-color: $color-bg;
+
+    @include mq(md) {
+        padding: rem(80) 0;
+    }
+
+    &__inner {
+        @include inner();
+        display: grid;
+        gap: rem(36);
+        align-items: center;
+
+        // 700px以上で2カラム横並びに切り替え
+        @include mq(md) {
+            grid-template-columns: 1fr 1fr;
+            column-gap: rem(64);
+        }
+    }
+
+    &__pic {
+        img {
+            width: 100%;
+            border-radius: rem(12);
+        }
+    }
+}
+
 .menu {
     padding: rem(64) 0;
 

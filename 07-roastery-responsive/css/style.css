@@ -227,6 +227,36 @@ p {
   word-break: keep-all;
 }
 
+.concept {
+  padding: 4rem 0;
+  background-color: #f2ece1;
+}
+@media (width >= 768px) {
+  .concept {
+    padding: 5rem 0;
+  }
+}
+.concept__inner {
+  max-width: 1200px;
+  width: 88%;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  gap: 2.25rem;
+  align-items: center;
+}
+@media (width >= 768px) {
+  .concept__inner {
+    grid-template-columns: 1fr 1fr;
+    -moz-column-gap: 4rem;
+         column-gap: 4rem;
+  }
+}
+.concept__pic img {
+  width: 100%;
+  border-radius: 0.75rem;
+}
+
 .menu {
   padding: 4rem 0;
 }
