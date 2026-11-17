@@ -120,6 +120,12 @@ p {
 .intro--center {
   text-align: center;
 }
+.intro__lead {
+  font-weight: bold;
+  color: #2c4c3e;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
 
 .btn {
   display: block;
@@ -150,11 +156,6 @@ p {
 .btn--center {
   margin-left: auto;
   margin-right: auto;
-}
-
-.card-wrapper {
-  container-type: inline-size;
-  container-name: cardContainer;
 }
 
 .card {
@@ -224,12 +225,6 @@ p {
 }
 .hero__image img {
   border-radius: 25px;
-}
-
-.lead-text {
-  font-weight: bold;
-  color: #2c4c3e;
-  word-break: keep-all;
 }
 
 .concept {
@@ -306,6 +301,9 @@ p {
   margin-left: auto;
   margin-right: auto;
 }
+.pickup__main, .pickup__side {
+  container-type: inline-size;
+}
 
 .schedule {
   padding: 4rem 0;
@@ -327,34 +325,32 @@ p {
     display: none;
   }
 }
-
-.table-scroll {
+.schedule__scroll {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   padding-bottom: 0.5rem;
   border-radius: 0.5rem;
 }
-
-.schedule-table {
+.schedule__table {
   width: 100%;
   min-width: 640px;
   border-collapse: collapse;
   background-color: #ffffff;
 }
-.schedule-table th,
-.schedule-table td {
+.schedule__table th,
+.schedule__table td {
   padding: 1rem 1.25rem;
   border: 1px solid #dfd6c7;
   white-space: nowrap;
   font-size: 0.875rem;
   text-align: left;
 }
-.schedule-table thead th {
+.schedule__table thead th {
   background-color: #2c4c3e;
   color: #ffffff;
   font-weight: bold;
 }
-.schedule-table tbody th {
+.schedule__table tbody th {
   background-color: #f2ece1;
   color: #2c4c3e;
   font-weight: bold;
@@ -374,43 +370,42 @@ p {
   margin-left: auto;
   margin-right: auto;
 }
-
-.company-table {
+.company__table {
   width: 100%;
   border-collapse: collapse;
   background-color: #ffffff;
   border-top: 1px solid #dfd6c7;
 }
-.company-table tr,
-.company-table th,
-.company-table td {
+.company__table tr,
+.company__table th,
+.company__table td {
   display: block;
   width: 100%;
 }
-.company-table th {
+.company__table th {
   padding: 0.875rem 1rem 0.375rem;
   background-color: #f2ece1;
   color: #2c4c3e;
   font-weight: bold;
   text-align: left;
 }
-.company-table td {
+.company__table td {
   padding: 0.625rem 1rem 1rem;
   border-bottom: 1px solid #dfd6c7;
 }
 @media (width >= 768px) {
-  .company-table tr {
+  .company__table tr {
     display: table-row;
   }
-  .company-table th,
-  .company-table td {
+  .company__table th,
+  .company__table td {
     display: table-cell;
     width: auto;
     padding: 1.125rem 1.5rem;
     border-bottom: 1px solid #dfd6c7;
     vertical-align: middle;
   }
-  .company-table th {
+  .company__table th {
     width: 12.5rem;
   }
 }/*# sourceMappingURL=style.css.map */

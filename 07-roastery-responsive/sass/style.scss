@@ -199,6 +199,14 @@ p {
     &--center {
         text-align: center;
     }
+
+    // <wbr>と組み合わせる文節折り返し用クラス
+    &__lead {
+        font-weight: bold;
+        color: $color-main;
+        word-break: keep-all; // 単語の途中で切れるのを防ぐ（<wbr>の位置で改行）
+        overflow-wrap: break-word; // 長い英単語などが枠を突き破るのを防ぐ保険
+    }
 }
 
 .btn {
@@ -233,11 +241,6 @@ p {
         margin-left: auto;
         margin-right: auto;
     }
-}
-
-.card-wrapper {
-    container-type: inline-size;
-    container-name: cardContainer;
 }
 
 .card {
@@ -318,12 +321,6 @@ p {
     }
 }
 
-.lead-text {
-    font-weight: bold;
-    color: $color-main;
-    word-break: keep-all;
-}
-
 .concept {
     padding: rem(64) 0;
     background-color: $color-bg;
@@ -391,6 +388,11 @@ p {
     &__inner {
         @include inner();
     }
+
+    &__main,
+    &__side {
+        container-type: inline-size; // 横幅の変化を監視する
+    }
 }
 
 .schedule {
@@ -410,40 +412,40 @@ p {
             display: none;
         }
     }
-}
 
-.table-scroll {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: rem(8);
-    border-radius: rem(8);
-}
-
-.schedule-table {
-    width: 100%;
-    min-width: 640px;
-    border-collapse: collapse;
-    background-color: $color-white;
-
-    th,
-    td {
-        padding: rem(16) rem(20);
-        border: 1px solid $color-border;
-        white-space: nowrap;
-        font-size: rem(14);
-        text-align: left;
+    &__scroll {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: rem(8);
+        border-radius: rem(8);
     }
 
-    thead th {
-        background-color: $color-main;
-        color: $color-white;
-        font-weight: bold;
-    }
+    &__table {
+        width: 100%;
+        min-width: 640px;
+        border-collapse: collapse;
+        background-color: $color-white;
 
-    tbody th {
-        background-color: $color-bg;
-        color: $color-main;
-        font-weight: bold;
+        th,
+        td {
+            padding: rem(16) rem(20);
+            border: 1px solid $color-border;
+            white-space: nowrap;
+            font-size: rem(14);
+            text-align: left;
+        }
+
+        thead th {
+            background-color: $color-main;
+            color: $color-white;
+            font-weight: bold;
+        }
+
+        tbody th {
+            background-color: $color-bg;
+            color: $color-main;
+            font-weight: bold;
+        }
     }
 }
 
@@ -457,52 +459,52 @@ p {
     &__inner {
         @include inner();
     }
-}
 
-.company-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: $color-white;
-    border-top: 1px solid $color-border;
-
-    // モバイル表示（デフォルト）：tableの構造をblockに崩して縦積みにする
-    tr,
-    th,
-    td {
-        display: block;
+    &__table {
         width: 100%;
-    }
+        border-collapse: collapse;
+        background-color: $color-white;
+        border-top: 1px solid $color-border;
 
-    th {
-        padding: rem(14) rem(16) rem(6);
-        background-color: $color-bg;
-        color: $color-main;
-        font-weight: bold;
-        text-align: left;
-    }
-
-    td {
-        padding: rem(10) rem(16) rem(16);
-        border-bottom: 1px solid $color-border;
-    }
-
-    // 700px以上：本来の横並びテーブルに戻す
-    @include mq(md) {
-        tr {
-            display: table-row;
-        }
-
+        // モバイル表示（デフォルト）：tableの構造をblockに崩して縦積みにする
+        tr,
         th,
         td {
-            display: table-cell;
-            width: auto;
-            padding: rem(18) rem(24);
-            border-bottom: 1px solid $color-border;
-            vertical-align: middle;
+            display: block;
+            width: 100%;
         }
 
         th {
-            width: rem(200);
+            padding: rem(14) rem(16) rem(6);
+            background-color: $color-bg;
+            color: $color-main;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        td {
+            padding: rem(10) rem(16) rem(16);
+            border-bottom: 1px solid $color-border;
+        }
+
+        // 700px以上：本来の横並びテーブルに戻す
+        @include mq(md) {
+            tr {
+                display: table-row;
+            }
+
+            th,
+            td {
+                display: table-cell;
+                width: auto;
+                padding: rem(18) rem(24);
+                border-bottom: 1px solid $color-border;
+                vertical-align: middle;
+            }
+
+            th {
+                width: rem(200);
+            }
         }
     }
 }
