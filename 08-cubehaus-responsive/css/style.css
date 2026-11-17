@@ -1,1 +1,156 @@
-/*# sourceMappingURL=style.css.map */
+body {
+  color: #000000;
+  font-size: 0.875rem;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+  line-height: 1.7777777778;
+  letter-spacing: 0.05em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+.header {
+  padding: 3rem 0;
+}
+.header__inner {
+  max-width: 1000px;
+  width: 83%;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+}
+.header__logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.2083333333;
+  letter-spacing: 0.1em;
+}
+.header .gnav__list {
+  display: grid;
+  grid-auto-flow: column;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+}
+.header .gnav__link {
+  font-size: 0.75rem;
+  line-height: 1.1666666667;
+}
+.header .gnav__link:hover {
+  color: #E40065;
+}
+.header .gnav__active {
+  color: #E40065;
+}
+
+.footer {
+  padding: 5rem 0;
+  color: #ffffff;
+  background-color: #2f2f2f;
+}
+.footer__inner {
+  max-width: 1000px;
+  width: 83%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.footer__copyright {
+  text-align: center;
+}
+.footer__copyright small {
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+/* module */
+.intro__title {
+  margin: 4rem;
+  padding-bottom: 1.5rem;
+  font-size: 2rem;
+  font-family: "Times New Roman", Times, "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+  font-weight: bold;
+  line-height: 1.6875;
+  text-align: center;
+  border-bottom: 2px solid #E40065;
+}
+.intro__content p {
+  padding-bottom: 3rem;
+}
+
+.card__pic {
+  padding-bottom: 1.5rem;
+}
+.card__pic img {
+  width: 100%;
+}
+.card__body {
+  display: grid;
+  gap: 1.5rem;
+}
+.card__title {
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+/* index.html */
+.hero__inner {
+  max-width: 1000px;
+  width: 83%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.concept {
+  padding: 5rem 0 8rem;
+}
+.concept__inner {
+  max-width: 1000px;
+  width: 83%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.works {
+  padding: 8rem 0;
+  background-color: #f4f4f4;
+}
+.works__inner {
+  max-width: 1000px;
+  width: 83%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.works__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+  gap: 4rem 3.125rem;
+}
+
+.schedule {
+  padding: 8rem 0;
+}
+.schedule__inner {
+  max-width: 1000px;
+  width: 83%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.schedule__scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.5rem;
+  border-radius: 0.5rem;
+}
+.schedule__table {
+  width: 100%;
+  min-width: 580px;
+  border-collapse: collapse;
+}/*# sourceMappingURL=style.css.map */
