@@ -4,18 +4,195 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CUBE HAUS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css/destyle.min.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <header class="header">
-
+        <div class="header__inner">
+            <h1 class="header__logo">
+                <a href="./index.html" class="header__logo-link">
+                    CUBE HAUS
+                </a>
+            </h1>
+            <nav class="gnav">
+                <ul class="gnav__list">
+                    <li class="gnav__item">
+                        <a href="#" class="gnav__link">COMPANY</a>
+                    </li>
+                    <li class="gnav__item">
+                        <a href="#" class="gnav__link">MISSION</a>
+                    </li>
+                    <li class="gnav__item">
+                        <a href="#" class="gnav__link">CONTACT</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main class="main">
+        <section class="hero">
+            <div class="hero__inner">
+                <picture class="hero__image">
+                    <source media="(width > 700px)" srcset="./images/pic_main_pc.png">
+                    <source srcset="./images/pic_main_sp.png">
+                    <img src="./images/pic_main_sp.png" alt="メインビジュアル" width="1000" height="400" loading="eager">
+                </picture>
+            </div>
+        </section>
 
+        <section class="concept">
+            <div class="concept__inner">
+                <div class="concept__info intro">
+                    <h2 class="intro__title">
+                        経営理念
+                    </h2>
+                    <div class="intro__concept">
+                        <p>
+                            日々の喧騒から解放される静かな空間で、
+                            自分らしい豊かな時間をお過ごしください。
+                            私たちが大切にしているのは、暮らしの本質を見つめ、
+                            家族との対話に心から集中できる、
+                            洗練された「器」としての家をご提供することです。
+                        </p>
+                        <p>
+                            優れたデザインは、何気ない日常を
+                            より豊かで特別なものに変える力があります。
+                            皆様の人生という物語の素敵な舞台となれることを、
+                            心より願っております。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="works">
+            <div class="works__inner">
+                <div class="works__info intro">
+                    <h2 class="intro__title">
+                        制作実績
+                    </h2>
+                </div>
+                <div class="works__list">
+                    <article class="works__item card">
+                        <div class="card__pic">
+                            <img src="./images/pic_works01.png" alt="光と風の抜ける家" width="580" height="300">
+                        </div>
+                        <div class="card__body">
+                            <h3 class="card__title">
+                                光と風の抜ける家
+                            </h3>
+                            <p class="card__text">
+                                白を基調としたミニマルな空間。大きな窓から光が差し込む、開放感あふれる住まい。
+                            </p>
+                        </div>
+                    </article>
+                    <article class="works__item card">
+                        <div class="card__pic">
+                            <img src="./images/pic_works02.png" alt="空と繋がるコートハウス" width="580" height="300">
+                        </div>
+                        <div class="card__body">
+                            <h3 class="card__title">
+                                空と繋がるコートハウス
+                            </h3>
+                            <p class="card__text">
+                                プライバシーを守りながら、空を独り占めできる中庭。家族の時間が豊かになる設計。
+                            </p>
+                        </div>
+                    </article>
+                    <article class="works__item card">
+                        <div class="card__pic">
+                            <img src="./images/pic_works03.png" alt="ウッドデッキのある家" width="580" height="300">
+                        </div>
+                        <div class="card__body">
+                            <h3 class="card__title">
+                                ウッドデッキのある家
+                            </h3>
+                            <p class="card__text">
+                                セカンドリビングやBBQスペース、子供・ペットの遊び場などに幅広く活用できます。
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="schedule">
+            <div class="schedule__inner">
+                <div class="schedule__info intro">
+                    <h2 class="intro__title">
+                        営業時間
+                    </h2>
+                </div>
+
+                <div class="schedule__scroll">
+                    <table class="schedule__table">
+                        <thead>
+                            <tr>
+                                <th>曜日</th>
+                                <th>LUNCH</th>
+                                <th>DINNER</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>月曜日</th>
+                                <td>11:30 - 15:00 (L.O. 14:30)</td>
+                                <td>18:00 - 22:00 (L.O. 21:00)</td>
+                            </tr>
+
+                            <tr>
+                                <th>火曜日</th>
+                                <td>11:30 - 15:00 (L.O. 14:30)</td>
+                                <td>18:00 - 22:00 (L.O. 21:00)</td>
+                            </tr>
+
+                            <tr>
+                                <th>水曜日</th>
+                                <td>定休日</td>
+                                <td>定休日</td>
+                            </tr>
+
+                            <tr>
+                                <th>木曜日</th>
+                                <td>11:30 - 15:00 (L.O. 14:30)</td>
+                                <td>18:00 - 22:00 (L.O. 21:00)</td>
+                            </tr>
+
+                            <tr>
+                                <th>金曜日</th>
+                                <td>11:30 - 15:00 (L.O. 14:30)</td>
+                                <td>18:00 - 24:00 (L.O. 23:00)</td>
+                            </tr>
+
+                            <tr>
+                                <th>土曜日</th>
+                                <td>11:30 - 16:00 (L.O. 15:30)</td>
+                                <td>18:00 - 24:00 (L.O. 23:00)</td>
+                            </tr>
+
+                            <tr>
+                                <th>日曜日</th>
+                                <td>定休日</td>
+                                <td>定休日</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="schedule__note">
+                    ※横にスクロールできます。
+                </p>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
-
+        <div footer__inner>
+            <p class="footer__copyright">
+                <small>&copy; 2007 CUBE HAUS INC.</small>
+            </p>
+        </div>
     </footer>
 </body>
 </html>
