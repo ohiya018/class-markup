@@ -72,13 +72,17 @@ p {
 
 /* module */
 .intro__title {
-  margin: 4rem;
-  padding-bottom: 1.5rem;
-  font-size: 2rem;
-  font-family: "Times New Roman", Times, "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+  margin-bottom: 4rem;
+  font-size: clamp(1.5rem, 3.2vw, 2rem);
   font-weight: bold;
   line-height: 1.6875;
   text-align: center;
+}
+.intro__title::after {
+  content: "";
+  display: block;
+  width: 6.25rem;
+  margin: 1.5rem auto 0;
   border-bottom: 2px solid #E40065;
 }
 .intro__content p {
@@ -143,14 +147,38 @@ p {
   margin-left: auto;
   margin-right: auto;
 }
+.schedule__note {
+  margin-top: 1.5rem;
+}
+@media (min-width: 700px) {
+  .schedule__note {
+    display: none;
+  }
+}
 .schedule__scroll {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  padding-bottom: 0.5rem;
-  border-radius: 0.5rem;
+  max-width: 50rem;
+  margin: auto;
+}
+.schedule__scroll__inner {
+  container-type: inline-size;
+  min-width: 43.75rem;
 }
 .schedule__table {
   width: 100%;
   min-width: 580px;
   border-collapse: collapse;
+  border: 1px solid #707070;
+  margin-bottom: 1rem;
+}
+.schedule__table th {
+  background-color: #EDEFF2;
+}
+.schedule__table th,
+.schedule__table td {
+  padding: 0.9375rem 1.25rem;
+  border: 1px solid #707070;
+  white-space: nowrap;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */

@@ -9,6 +9,7 @@ $color-base: #ffffff;
 $color-main: #E40065;
 $color-bg: #f4f4f4;
 $color-footer: #2f2f2f;
+$color-border: #707070;
 
 // Typography
 $font-size-base: 16;
@@ -66,6 +67,24 @@ $breakpoints: (
     width: $w;
     margin-left: auto;
     margin-right: auto;
+}
+
+@mixin title-main() {
+    margin-bottom: rem(64);
+    //font-size: rem(32);
+    font-size: clamp(rem(24), 3.2vw, rem(32));
+    font-weight: bold;
+    line-height: math.div(54, 32);
+    text-align: center;
+
+    &::after {
+        content: "";
+        display: block;
+        width: rem(100);
+        margin: rem(24) auto 0;
+        border-bottom: 2px solid $color-main;
+    }
+
 }
 
 body {
@@ -147,14 +166,7 @@ p {
 /* module */
 .intro {
     &__title {
-        margin: rem(64);
-        padding-bottom: rem(24);
-        font-size: rem(32);
-        font-family: $font-family-mincho;
-        font-weight: bold;
-        line-height: math.div(54, 32);
-        text-align: center;
-        border-bottom: 2px solid $color-main;
+        @include title-main();
     }
 
     &__content {
@@ -221,18 +233,43 @@ p {
         @include inner();
     }
 
+    &__note {
+        margin-top: rem(24);
+
+        @media (min-width: 700px) {
+            display: none;
+        }
+    }
+
     &__scroll {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
-        padding-bottom: rem(8);
-        border-radius: rem(8);
+        max-width: rem(800);
+        margin: auto;
+
+        &__inner {
+            container-type: inline-size;
+            min-width: rem(700);
+        }
     }
 
     &__table {
         width: 100%;
         min-width: 580px;
         border-collapse: collapse;
+        border: 1px solid $color-border;
+        margin-bottom: rem(16);
 
+        th {
+            background-color: #EDEFF2;
+        }
 
+        th,
+        td {
+            padding: rem(15) rem(20);
+            border: 1px solid $color-border;
+            white-space: nowrap;
+            text-align: center;
+        }
     }
 }
