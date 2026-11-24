@@ -1,4 +1,123 @@
 body {
   color: #244D4D;
-  font-size: 16em;
+  font-size: 16;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  line-height: 1.6875;
+  min-width: 1000px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* module */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2.5rem 0;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.header__inner {
+  max-width: 1000px;
+  width: 86.4864864865%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo {
+  font-size: 1.625rem;
+  font-weight: bold;
+  line-height: 1;
+}
+.header .gnav__list {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1.875rem;
+}
+.header .sns {
+  position: fixed;
+  bottom: 10%;
+  right: 6.7567567568%;
+}
+.header .sns__list {
+  display: grid;
+  text-align: center;
+  gap: 1.5rem;
+}
+.header .sns__item {
+  line-height: 1;
+}
+
+.mainvisual {
+  margin-bottom: 6rem;
+}
+@media (width >= 740px) {
+  .mainvisual {
+    margin-bottom: 7.5rem;
+  }
+}
+.mainvisual {
+  padding: 15.625rem 0 8.75rem;
+  background: url(../images/bg_hero.png) no-repeat center/cover;
+}
+.mainvisual__inner {
+  max-width: 1000px;
+  width: 86.4864864865%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mainvisual__content {
+  max-width: 30rem;
+  padding: 4.0625rem 3.75rem;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.mainvisual__catch {
+  margin-bottom: 1.5625rem;
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 1.2083333333;
+  text-align: center;
+  text-align: left;
+}
+
+.about {
+  margin-bottom: 6rem;
+}
+@media (width >= 740px) {
+  .about {
+    margin-bottom: 7.5rem;
+  }
+}
+.about__inner {
+  max-width: 1000px;
+  width: 86.4864864865%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.about__title {
+  margin-bottom: 1.5625rem;
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 1.2083333333;
+  text-align: center;
+}
+.about__lead {
+  padding-bottom: 3.125rem;
+  text-align: center;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+.about__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
 }/*# sourceMappingURL=style.css.map */

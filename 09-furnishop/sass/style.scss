@@ -11,14 +11,18 @@ $color-bg: #ffffff;
 
 // Typography
 $font-size-base: 16;
-$font-family-gothic: "Gill Sans", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+$font-family-gothic: 'Gill Sans',
+    'Gill Sans MT',
+    Calibri,
+    'Trebuchet MS',
+    sans-serif;
 $font-family-mincho: "Times New Roman", Times, "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
 
 // Breakpoints
 $breakpoints: (
-    "sm": 740px,
+    "sm": 640px,
     // 大型スマホ〜小型タブレット
-    "md": 768px,
+    "md": 740px,
     // 一般的なタブレット
     "lg": 1024px,
     // ノートPC・デスクトップ
@@ -60,14 +64,144 @@ $breakpoints: (
 }
 
 // インナーコンテナ幅の指定
-@mixin inner($mw: 740px, $w: 86%) {
+@mixin inner($mw: 1000px, $w: pct(640, 740)) {
     max-width: $mw;
     width: $w;
     margin-left: auto;
     margin-right: auto;
 }
 
+@mixin title-main() {
+    margin-bottom: rem(25);
+    font-size: rem(48);
+    font-weight: bold;
+    letter-spacing: math.div(58, 48);
+    text-align: center;
+}
+
+@mixin group-section() {
+    margin-bottom: rem(96);
+
+    @include mq() {
+        margin-bottom: rem(120);
+    }
+}
+
+
+
+
 body {
     color: $color-text;
-    font-size: 16em;
+    font-size: $font-size-base;
+    font-family: $font-family-gothic;
+    line-height: math.div(27, 16);
+    min-width: 1000px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+/* module */
+
+
+
+// header
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: rem(40) 0;
+    background-color: rgba(255, 255, 255, 0.8);
+
+    &__inner {
+        @include inner();
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        font-size: rem(26);
+        font-weight: bold;
+        line-height: 1;
+    }
+
+    .gnav {
+        &__list {
+            display: grid;
+            grid-auto-flow: column;
+            gap: rem(30);
+        }
+    }
+
+    .sns {
+        position: fixed;
+        bottom: 10%;
+        right: pct(50, 740);
+
+        &__list {
+            display: grid;
+            text-align: center;
+            gap: rem(24);
+        }
+
+        &__item {
+            line-height: 1;
+        }
+    }
+
+}
+
+// main
+.mainvisual {
+    @include group-section();
+    padding: rem(250) 0 rem(140);
+    background: url(../images/bg_hero.png) no-repeat center / cover;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__content {
+        max-width: rem(480);
+        padding: rem(65) rem(60);
+        background-color: rgba(255, 255, 255, 0.6);
+    }
+
+    &__catch {
+        @include title-main();
+        text-align: left;
+    }
+}
+
+.about {
+    @include group-section();
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        @include title-main();
+    }
+
+    &__lead {
+        padding-bottom: rem(50);
+        text-align: center;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(rem(300), 1fr));
+    }
 }
