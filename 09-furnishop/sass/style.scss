@@ -60,9 +60,14 @@ $breakpoints: (
 }
 
 // インナーコンテナ幅の指定
-@mixin inner($mw: 1000px, $w: 90%) {
+@mixin inner($mw: 740px, $w: 86%) {
     max-width: $mw;
     width: $w;
     margin-left: auto;
     margin-right: auto;
+}
+
+body {
+    color: $color-text;
+    font-size: 16em;
 }
