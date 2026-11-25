@@ -17,7 +17,7 @@
         <a href="./index.html">
           <!-- TODO [Step 1]: logo.png をベクター形式の logo.svg に変更しよう -->
           <!-- TODO [Step 3]: width="180" height="32" を指定してレイアウトシフトを防ごう -->
-          <img src="./images/logo.png" alt="LUMINA 2026">
+          <img src="./images/logo.svg" alt="LUMINA 2026">
         </a>
       </h1>
       <nav class="gnav">
@@ -39,12 +39,7 @@
           <!-- TODO [Step 1]: 3.5MBの巨大PNG（pic_hero.png）を、横幅1200pxにリサイズ＆WebP変換した pic_hero.webp に差し替えよう -->
           <!-- TODO [Step 3]: width="1200" height="640" を指定して、読み込み時のガタつき（CLS）をゼロにしよう -->
           <!-- TODO [Step 5]: ファーストビュー画像に誤って付いている loading="lazy" を削除し、fetchpriority="high" に変更しよう -->
-          <img
-            class="hero__img"
-            src="./images/pic_hero.png"
-            alt="LUMINA EXHIBITION 2026 メインビジュアル"
-            loading="lazy"
-          >
+          <img class="hero__img" src="./images/pic_hero.webp" alt="LUMINA EXHIBITION 2026 メインビジュアル" loading="lazy">
         </div>
 
         <div class="hero__body intro intro--center">
@@ -81,7 +76,7 @@
               <!-- TODO [Step 1]: 横幅600pxの WebP（pic_exhibit01.webp）に変換して差し替えよう -->
               <!-- TODO [Step 3]: width="600" height="420" を追加しよう -->
               <!-- TODO [Step 5]: スクロール下の画像なので loading="lazy" decoding="async" を追加しよう -->
-              <img src="./images/pic_exhibit01.png" alt="01 / PRISM HORIZON">
+              <img src="./images/pic_exhibit01.webp" alt="01 / PRISM HORIZON">
             </div>
             <div class="card__body">
               <span class="card__tag">ZONE A</span>
@@ -94,7 +89,7 @@
           <article class="gallery__item card fade-in">
             <div class="card__pic">
               <!-- TODO [Step 1, 3, 5]: WebP化 ＋ width/height指定 ＋ loading="lazy" decoding="async" -->
-              <img src="./images/pic_exhibit02.png" alt="02 / ECHOES OF WATER">
+              <img src="./images/pic_exhibit02.webp" alt="02 / ECHOES OF WATER">
             </div>
             <div class="card__body">
               <span class="card__tag">ZONE B</span>
@@ -107,7 +102,7 @@
           <article class="gallery__item card fade-in">
             <div class="card__pic">
               <!-- TODO [Step 1, 3, 5]: WebP化 ＋ width/height指定 ＋ loading="lazy" decoding="async" -->
-              <img src="./images/pic_exhibit03.png" alt="03 / NEURAL BLOSSOM">
+              <img src="./images/pic_exhibit03.webp" alt="03 / NEURAL BLOSSOM">
             </div>
             <div class="card__body">
               <span class="card__tag">ZONE C</span>
@@ -139,13 +134,7 @@
         <!-- TODO [Step 3]: CSS側で .access__map に aspect-ratio: 16 / 9; を指定して高さを確保しよう -->
         <div class="access__map">
           <!-- TODO [Step 5]: iframe にも loading="lazy" を追加して初期表示の負荷を減らそう -->
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.426712491233!2d136.881537!3d35.170915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600376e794d78b89%3A0x81f7204bf8261663!2z5ZCN5Y-k5bGL6aeF!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp"
-            title="会場アクセスマップ"
-            style="border:0;"
-            allowfullscreen=""
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.426712491233!2d136.881537!3d35.170915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600376e794d78b89%3A0x81f7204bf8261663!2z5ZCN5Y-k5bGL6aeF!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp" title="会場アクセスマップ" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </section>
