@@ -1,0 +1,352 @@
+@use "sass:math";
+@use "sass:map";
+
+// [Step 2] CSS内の @import を廃止（HTMLの <head> 内で preconnect + link タグにより並列読み込み）
+
+// --- Variables ---
+$color-text: #e2e8f0;
+$color-base: #0b0f19;
+$color-surface: #131b2e;
+$color-main: #6366f1;
+$color-accent: #ec4899;
+$color-border: #26314d;
+$color-white: #ffffff;
+
+$font-size-base: 16;
+$font-family-gothic: "Noto Sans JP", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", sans-serif;
+
+$breakpoints: (
+  "md": 700px,
+);
+
+// --- Functions ---
+@function rem($px-value) {
+  @return #{math.div($px-value, $font-size-base)}rem;
+}
+
+@function ls($xd-value) {
+  @return #{math.div($xd-value, 1000)}em;
+}
+
+// --- Mixins ---
+@mixin mq($breakpoint: md) {
+  $width: map.get($breakpoints, $breakpoint);
+
+  @media (width >= $width) {
+    @content;
+  }
+}
+
+@mixin inner($mw: 1200px, $w: 88%) {
+  max-width: $mw;
+  width: $w;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// =================================================================
+//  Base
+// =================================================================
+body {
+  background-color: $color-base;
+  color: $color-text;
+  font-size: rem(16);
+  font-family: $font-family-gothic;
+  line-height: 1.75;
+}
+
+img,
+picture,
+video {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+// =================================================================
+//  Animation（スクロール出現演出）
+// =================================================================
+// [Step 5] top ではなく transform と opacity のみを使用し、GPU合成で滑らかに描画
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// =================================================================
+//  Modules (BEM)
+// =================================================================
+.intro {
+  &--center {
+    text-align: center;
+  }
+
+  &__catch {
+    margin-bottom: rem(12);
+    color: $color-accent;
+    font-size: rem(13);
+    font-weight: bold;
+    letter-spacing: ls(120);
+  }
+
+  &__title {
+    margin-bottom: rem(24);
+    color: $color-white;
+    font-size: clamp(rem(22), 3vw, rem(36));
+    font-weight: bold;
+    line-height: 1.35;
+    text-wrap: balance;
+
+    span {
+      display: inline-block;
+    }
+  }
+
+  &__content {
+    display: grid;
+    row-gap: rem(16);
+  }
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  margin-top: rem(32);
+  padding: 1.1em 1.5em;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, $color-main, $color-accent);
+  color: $color-white;
+  font-size: rem(15);
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: ls(50);
+  text-align: center;
+  transition: opacity 0.25s;
+
+  @include mq(md) {
+    width: rem(260);
+  }
+
+  &:hover {
+    opacity: 0.85;
+  }
+
+  &--center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.card {
+  display: grid;
+  gap: rem(20);
+  padding: rem(24);
+  border: 1px solid $color-border;
+  border-radius: rem(12);
+  background-color: $color-surface;
+
+  &__pic {
+    img {
+      width: 100%;
+      border-radius: rem(8);
+    }
+  }
+
+  &__body {
+    display: grid;
+    gap: rem(10);
+  }
+
+  &__tag {
+    display: inline-block;
+    justify-self: start;
+    padding: rem(4) rem(10);
+    border-radius: rem(4);
+    background-color: rgba($color-main, 0.2);
+    color: #a5b4fc;
+    font-size: rem(11);
+    font-weight: bold;
+    letter-spacing: ls(80);
+  }
+
+  &__title {
+    color: $color-white;
+    font-size: clamp(rem(18), 2vw, rem(20));
+    font-weight: bold;
+    line-height: 1.4;
+  }
+
+  &__text {
+    font-size: rem(14);
+    line-height: 1.7;
+  }
+}
+
+.header {
+  padding: rem(20) 0;
+  background-color: $color-surface;
+  border-bottom: 1px solid $color-border;
+
+  &__inner {
+    @include inner();
+    display: grid;
+    gap: rem(16);
+    justify-items: center;
+
+    @include mq(md) {
+      grid-auto-flow: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__logo {
+    img {
+      width: rem(180);
+    }
+  }
+}
+
+.gnav {
+  &__list {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: rem(28);
+  }
+
+  &__link {
+    padding: rem(6) 0;
+    color: $color-white;
+    font-size: rem(14);
+    font-weight: bold;
+    letter-spacing: ls(80);
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s;
+
+    &:hover,
+    &--current {
+      border-bottom-color: $color-accent;
+    }
+  }
+}
+
+.footer {
+  padding: rem(32) 0 rem(40);
+  background-color: $color-surface;
+  border-top: 1px solid $color-border;
+
+  &__inner {
+    @include inner();
+  }
+
+  &__copyright {
+    color: #94a3b8;
+    text-align: center;
+
+    @include mq(md) {
+      text-align: right;
+    }
+
+    small {
+      font-size: rem(14);
+    }
+  }
+}
+
+// =================================================================
+//  Pages
+// =================================================================
+.hero {
+  padding: rem(40) 0 rem(64);
+
+  @include mq(md) {
+    padding: rem(56) 0 rem(80);
+  }
+
+  &__inner {
+    @include inner();
+  }
+
+  &__visual {
+    margin-bottom: rem(32);
+  }
+
+  &__img {
+    width: 100%;
+    border-radius: rem(16);
+    border: 1px solid $color-border;
+  }
+
+  &__body {
+    max-width: rem(760);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.gallery {
+  padding: rem(64) 0;
+  background-color: $color-surface;
+
+  @include mq(md) {
+    padding: rem(80) 0;
+  }
+
+  &__inner {
+    @include inner();
+  }
+
+  &__info {
+    max-width: rem(700);
+    margin: 0 auto rem(40);
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: rem(32);
+  }
+}
+
+.access {
+  padding: rem(64) 0;
+
+  @include mq(md) {
+    padding: rem(80) 0;
+  }
+
+  &__inner {
+    @include inner();
+    display: grid;
+    gap: rem(36);
+    align-items: center;
+
+    @include mq(md) {
+      grid-template-columns: 5fr 7fr;
+      column-gap: rem(56);
+    }
+  }
+
+  // [Step 3] aspect-ratio: 16 / 9; で iframe 読み込み前の領域を確保し、CLSを防止
+  &__map {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: rem(12);
+    overflow: hidden;
+    border: 1px solid $color-border;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

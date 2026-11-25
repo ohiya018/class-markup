@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMINA EXHIBITION 2026 | 光とデジタルアートの体験型展示会</title>
+  <!-- [Step 2] Google Fonts の事前接続（preconnect）＋ 必要な2ウェイトのみ（400, 700）＋ display=swap -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css/destyle.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- [Step 5] defer 属性でレンダリングブロックを完全に回避 -->
+  <script src="./js/main.js" defer></script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <h1 class="header__logo">
+        <a href="./index.html">
+          <!-- [Step 1 & 3] ベクター形式の SVG ロゴ（わずか573B）＋ width / height 指定 -->
+          <img src="./images/logo.svg" alt="LUMINA 2026" width="180" height="32">
+        </a>
+      </h1>
+      <nav class="gnav">
+        <ul class="gnav__list">
+          <li class="gnav__item"><a class="gnav__link" href="#gallery">EXHIBITS</a></li>
+          <li class="gnav__item"><a class="gnav__link" href="#access">ACCESS</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- =================================================================
+         Hero Section（ファーストビュー / LCP要素）
+         ================================================================= -->
+    <section class="hero">
+      <div class="hero__inner">
+        <div class="hero__visual">
+          <!-- [Step 1, 3, 4]
+               ・3.5MBの巨大PNG ➔ 19KBのAVIF / WebP（1200×640）に軽量化
+               ・width="1200" height="640" でCLS（レイアウトシフト）をゼロに
+               ・loading="lazy" を外し、fetchpriority="high" でLCPを最速化！ -->
+          <picture>
+            <source srcset="./images/pic_hero.avif" type="image/avif" width="1200" height="640">
+            <img class="hero__img" src="./images/pic_hero.webp" alt="LUMINA EXHIBITION 2026 メインビジュアル" width="1200"
+              height="640" fetchpriority="high">
+          </picture>
+        </div>
+
+        <div class="hero__body intro intro--center">
+          <p class="intro__catch">IMMERSIVE DIGITAL ART EXHIBITION</p>
+          <h2 class="intro__title">
+            <span>光と音が交差する、</span><span>未体験のイマーシブ空間へ。</span>
+          </h2>
+          <div class="intro__content">
+            <p>
+              「LUMINA EXHIBITION 2026」は、最新のプロジェクションマッピングとセンサー技術によって、来場者の動きに呼応して変化するデジタルアート展です。
+            </p>
+          </div>
+          <a class="btn btn--center" href="#gallery">展示作品を見る</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         Exhibits Gallery Section（スクロール下のカード一覧）
+         ================================================================= -->
+    <section class="gallery" id="gallery">
+      <div class="gallery__inner">
+        <div class="gallery__info intro intro--center">
+          <p class="intro__catch">FEATURED WORKS</p>
+          <h2 class="intro__title">
+            <span>注目の展示インスタレーション</span>
+          </h2>
+        </div>
+
+        <div class="gallery__list">
+          <!-- Card 1 -->
+          <article class="gallery__item card fade-in">
+            <div class="card__pic">
+              <!-- [Step 1, 3, 4] 600×420のWebP（5.5KB）＋ width/height ＋ loading="lazy" decoding="async" -->
+              <img src="./images/pic_exhibit01.webp" alt="01 / PRISM HORIZON" width="600" height="420" loading="lazy"
+                decoding="async">
+            </div>
+            <div class="card__body">
+              <span class="card__tag">ZONE A</span>
+              <h3 class="card__title">01 / PRISM HORIZON</h3>
+              <p class="card__text">無数のレーザー光線と霧が織りなす立体的な光の地平線。空間内を歩くことで光の屈折がリアルタイムに変化します。</p>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="gallery__item card fade-in">
+            <div class="card__pic">
+              <img src="./images/pic_exhibit02.webp" alt="02 / ECHOES OF WATER" width="600" height="420" loading="lazy"
+                decoding="async">
+            </div>
+            <div class="card__body">
+              <span class="card__tag">ZONE B</span>
+              <h3 class="card__title">02 / ECHOES OF WATER</h3>
+              <p class="card__text">水面に落ちる一滴の波紋を流体シミュレーションで再現。足元のセンサーが歩調に合わせて幻想的な音色を奏でます。</p>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="gallery__item card fade-in">
+            <div class="card__pic">
+              <img src="./images/pic_exhibit03.webp" alt="03 / NEURAL BLOSSOM" width="600" height="420" loading="lazy"
+                decoding="async">
+            </div>
+            <div class="card__body">
+              <span class="card__tag">ZONE C</span>
+              <h3 class="card__title">03 / NEURAL BLOSSOM</h3>
+              <p class="card__text">会場内の温度や来場者の声に反応して咲き誇るジェネラティブ・フラワー。二度と同じ景色は生まれません。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         Access Section（Googleマップ埋め込み）
+         ================================================================= -->
+    <section class="access" id="access">
+      <div class="access__inner">
+        <div class="access__info intro">
+          <p class="intro__catch">VENUE &amp; ACCESS</p>
+          <h2 class="intro__title">
+            <span>会場アクセス</span>
+          </h2>
+          <div class="intro__content">
+            <p>
+              名古屋駅前・スパイラルアートギャラリー特設ホール（名古屋市中村区名駅3丁目）にて開催中。
+            </p>
+          </div>
+        </div>
+
+        <!-- [Step 3 & 4] CSSの aspect-ratio: 16 / 9; で枠を確保し、loading="lazy" でマップを遅延読み込み -->
+        <div class="access__map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.426712491233!2d136.881537!3d35.170915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600376e794d78b89%3A0x81f7204bf8261663!2z5ZCN5Y-k5bGL6aeF!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp"
+            title="会場アクセスマップ" width="600" height="338" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__copyright">
+        <small>&copy; 2026 LUMINA EXHIBITION All Rights Reserved.</small>
+      </p>
+    </div>
+  </footer>
+</body>
+
+</html>

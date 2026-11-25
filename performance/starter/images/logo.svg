@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 32" width="180" height="32">
+  <g transform="translate(2, 2)">
+    <polygon points="14,0 28,14 14,28 0,14" fill="none" stroke="#6366f1" stroke-width="2.2"/>
+    <circle cx="14" cy="14" r="5" fill="#ec4899"/>
+  </g>
+  <text x="38" y="21" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="bold" letter-spacing="3" fill="#ffffff">LUMINA</text>
+  <text x="122" y="21" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" letter-spacing="2" fill="#a5b4fc">2026</text>
+</svg>
